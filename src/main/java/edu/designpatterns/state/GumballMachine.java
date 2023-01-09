@@ -1,10 +1,12 @@
 package edu.designpatterns.state;
 
+import edu.designpatterns.enums.GumballStateEnum;
+
 public class GumballMachine {
 	private final GumballHardwareDevice device;
-	private GumballMachineState state;
+	private GumballStateEnum state;
 
-	void setState(GumballMachineState state) {
+	public void setState(GumballStateEnum state) {
 		this.state = state;
 		state.start(this);
 	}
@@ -30,7 +32,7 @@ public class GumballMachine {
 		state.refill(this);
 	}
 
-	GumballHardwareDevice getDevice() {
+	public GumballHardwareDevice getDevice() {
 		return device;
 	}
 
